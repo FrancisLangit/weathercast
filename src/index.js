@@ -1,5 +1,5 @@
 import './style.css';
-import rickAstley from './rickAstley.jpg';
+import rickAstley from './assets/images/rickAstley.jpg';
 
 const rickAstleyImage = new Image();
 rickAstleyImage.src = rickAstley;

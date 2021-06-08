@@ -1,19 +1,37 @@
 import { openWeatherApi } from '../openWeatherApi.js';
 
 
+const weatherDataDisplay = (() => {
+    /**Where weather data on city searched is shown on user interface.*/
+
+    let _div = document.getElementById('weatherDataDisplay'); 
+
+    const update = (dataMain, dataWeather) => {
+        console.log(dataMain);
+        console.log(dataWeather);
+    }
+
+    return { update }
+})(); 
+
+
 const searchCityForm = (() => {
     /**Form that user fills in when searching for a city.*/
 
-    let _displayCityWeatherData = () => {
+    const _displayWeatherData = () => {
         /**
          * Displays weather data of city queried by user in form.
          */
         let userInput = document.getElementById('searchCityInput').value;
         openWeatherApi.getPromise(userInput)
-            .then(data => console.log(data));
+            .then(data => weatherDataDisplay.update(
+                data.main, 
+                data.weather[0],
+            )
+        );
     }
 
-    let _setUp = () => {
+    const _setUp = () => {
         /**
          * Sets up methods to fire upon submission of form.
          * 
@@ -23,7 +41,7 @@ const searchCityForm = (() => {
         let form = document.getElementById('searchCityForm');
         form.addEventListener('submit', event => {
             event.preventDefault(); // Prevent submit from refreshing browser.
-            _displayCityWeatherData();
+            _displayWeatherData();
         });
     }
 

@@ -3,7 +3,7 @@ const openWeatherApi = (() => {
 
     let _apiKey = '5fa4d007560f37c7fe7dc7244617ef63';
 
-    let getPromise = (cityName) => {
+    const getPromise = (cityName) => {
         /**
          * Get promise from API holding weather data of a city. 
          * 

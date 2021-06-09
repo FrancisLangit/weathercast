@@ -30,6 +30,8 @@ const openWeatherApi = (() => {
 
 const cityForm = (() => {
     /**Form that user fills in when searching for a city.*/
+    let _cityFormDiv = document.getElementById('cardCityForm');
+
 
     const _displayWeatherData = () => {
         /**
@@ -44,6 +46,7 @@ const cityForm = (() => {
         );
     }
 
+
     const _setUp = () => {
         /**
          * Sets up methods to fire upon submission of form.
@@ -51,14 +54,32 @@ const cityForm = (() => {
          * Adds submit event listener to form making it display data from Open
          * Weather API based on user's inputted city.
          */
-        let form = document.getElementById('cardCityForm');
-        form.addEventListener('submit', event => {
+        _cityFormDiv.addEventListener('submit', event => {
             event.preventDefault(); // Prevent submit from refreshing browser.
             _displayWeatherData();
         });
     }
 
+    
+    const hide = () => {
+        /**
+         * Hides the div holding contents of form.
+         */
+        _cityFormDiv.style.display = 'none';
+    }
+
+
+    const show = () => {
+        /**
+         * Unhides the div holding contents of form.
+         */
+         _cityFormDiv.style.display = 'block';
+    }
+
+
     _setUp();
+
+    return { hide, show}
 })();
 
 
@@ -70,6 +91,7 @@ const dataDisplay = (() => {
     const update = (dataMain, dataWeather) => {
         console.log(dataMain);
         console.log(dataWeather);
+        cityForm.hide();
     }
 
     return { update }

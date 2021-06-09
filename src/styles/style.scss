@@ -9,12 +9,12 @@
     padding: 65px;
     width: 450px;
 
-    &Header {
-        font-family: 'Open Sans Bold';
-        font-size: 64px;
-    }
-
     &CityForm {
+        &Header {
+            font-family: 'Open Sans Bold';
+            font-size: 64px;
+        }
+
         &Input {
             border: none;
             border-bottom: 1px solid black;

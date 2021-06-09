@@ -1,0 +1,19 @@
+@font-face {
+    font-family: 'Roboto Black';
+    src: url(../assets/RobotoBlack.ttf);
+}
+
+@font-face {
+    font-family: 'Roboto Regular';
+    src: url(../assets/RobotoRegular.ttf);
+}
+
+@font-face {
+    font-family: 'Roboto Thin';
+    src: url(../assets/RobotoThin.ttf);
+}
+
+
+#searchCityForm {
+    font-family: 'Roboto Regular';
+}

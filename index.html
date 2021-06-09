@@ -14,24 +14,79 @@
 </head>
 
 <body>
-    <div id="card">
-        <div id="cardCityForm">
-            <h1 id="cardCityFormHeader">
+    <div class="card">
+        <div id="cityForm">
+            <!-- <h1 id="cityFormHeader">
                 Weathercast
             </h1>
 
             <form>
                 <input 
-                    id="cardCityFormInput" 
+                    id="cityFormInput" 
                     type="text" 
                     placeholder="What city?">
-                <p id='cardCityFormHelp'>
+                <p id='cityFormHelp'>
                     Press enter to search.
                 </p>
-            </form>
+            </form> -->
         </div>
     
-        <div id="cardDataDisplay"></div>
+        <div id="data">
+            <p id="dataHeader">Manila, PH</p>
+
+            <div id="dataMain">
+                <img 
+                    id="dataMainIcon"
+                    src="http://openweathermap.org/img/wn/10d@2x.png">
+                <p id="dataMainTemp">35°C</p>
+                <div id="dataMainDivider"></div>
+                <p id="dataMainDescription">Overcast Clouds</p>
+            </div>
+
+            <div id="dataDetails">
+                <table>
+                    <tr>
+                        <th>Real Feel</th>
+                        <th id="dataDetailsFeel">35°C</th>
+                    </tr>
+
+                    <tr>
+                        <th>Low / High</th>
+                        <th id="dataDetailsLowHigh">32°C / 35°C</th>
+                    </tr>
+
+                    <tr>
+                        <th>Clouds</th>
+                        <th id="dataDetailsClouds">67%</th>
+                    </tr>
+
+                    <tr>
+                        <th>Sunrise</th>
+                        <th id="dataDetailsSunrise">5:00am</th>
+                    </tr>
+
+                    <tr>
+                        <th>Sunset</th>
+                        <th id="dataDetailsSunset">5:00pm</th>
+                    </tr>
+
+                    <tr>
+                        <th>Pressure</th>
+                        <th id="dataDetailsPressure">1010</th>
+                    </tr>
+
+                    <tr>
+                        <th>Humidity</th>
+                        <th id="dataDetailsHumidity">71</th>
+                    </tr>
+
+                    <tr>
+                        <th>Wind</th>
+                        <th id="dataDetailsWind">1.34 m/s</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
     </div>
 </body>
 

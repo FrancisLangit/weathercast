@@ -13,22 +13,22 @@
   src: url(../assets/OpenSansLight.ttf);
 }
 
-#card {
+.card {
   border-radius: 25px;
   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
-  height: 350px;
-  margin: 100px auto 0 auto;
-  padding: 65px;
+  height: 600px;
+  margin: 50px auto 0 auto;
+  padding: 30px 55px;
   width: 450px;
 }
 
-#cardCityFormHeader {
+#cityFormHeader {
   font-family: 'Open Sans Bold';
   font-size: 64px;
 }
 
-#cardCityFormInput {
+#cityFormInput {
   border: none;
   border-bottom: 1px solid black;
   font-family: 'Open Sans Regular';
@@ -37,7 +37,32 @@
   padding-bottom: 16px;
 }
 
-#cardCityFormHelp {
+#cityFormHelp {
   font-family: 'Open Sans Light';
   font-size: 16px;
+}
+
+#dataHeader {
+  font-family: 'Open Sans Bold';
+  font-size: 32px;
+}
+
+#dataMain {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#dataMainDivider {
+  border: 1px solid #d7d7d7;
+  height: 75px;
+  margin: 0 15px 0 15px;
+}
+
+#dataMainTemp {
+  font-family: 'Open Sans Bold';
+  font-size: 24px;
 }

@@ -1,32 +1,54 @@
 @import '_fonts';
 
-
-#card {
+.card {
     border-radius: 25px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
-    height: 350px;
-    margin: 100px auto 0 auto;
-    padding: 65px;
+    height: 600px;
+    margin: 50px auto 0 auto;
+    padding: 30px 55px;
     width: 450px;
+}
 
-    &CityForm {
-        &Header {
+#cityForm {
+    &Header {
+        font-family: 'Open Sans Bold';
+        font-size: 64px;
+    }
+
+    &Input {
+        border: none;
+        border-bottom: 1px solid black;
+        font-family: 'Open Sans Regular';
+        font-size: 32px;
+        outline: none;
+        padding-bottom: 16px;
+    }
+
+    &Help {
+        font-family: 'Open Sans Light';
+        font-size: 16px;
+    }
+}
+
+#data {
+    &Header {
+        font-family: 'Open Sans Bold';
+        font-size: 32px;
+    }
+
+    &Main {
+        display: flex;
+        align-items: center;
+
+        &Divider {
+            border: 1px solid rgb(215, 215, 215);
+            height: 75px;
+            margin: 0 15px 0 15px;
+        }    
+
+        &Temp {
             font-family: 'Open Sans Bold';
-            font-size: 64px;
-        }
-
-        &Input {
-            border: none;
-            border-bottom: 1px solid black;
-            font-family: 'Open Sans Regular';
-            font-size: 32px;
-            outline: none;
-            padding-bottom: 16px;
-        }
-
-        &Help {
-            font-family: 'Open Sans Light';
-            font-size: 16px;
+            font-size: 24px;
         }
     }
 }

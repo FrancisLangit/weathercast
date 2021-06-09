@@ -6,6 +6,7 @@ const openWeatherApi = (() => {
 
     let _apiKey = '5fa4d007560f37c7fe7dc7244617ef63';
 
+
     const getPromise = (cityName) => {
         /**
          * Get promise from API holding weather data of a city. 
@@ -30,20 +31,17 @@ const openWeatherApi = (() => {
 
 const cityForm = (() => {
     /**Form that user fills in when searching for a city.*/
-    let _cityFormDiv = document.getElementById('cardCityForm');
+
+    let _cityFormDiv = document.getElementById('cityForm');
 
 
     const _displayWeatherData = () => {
         /**
          * Displays weather data of city queried by user in form.
          */
-        let userInput = document.getElementById('cardCityFormInput').value;
+        let userInput = document.getElementById('cityFormInput').value;
         openWeatherApi.getPromise(userInput)
-            .then(data => dataDisplay.update(
-                data.main, 
-                data.weather[0],
-            )
-        );
+            .then(data => dataDisplay.update(data));
     }
 
 
@@ -86,12 +84,13 @@ const cityForm = (() => {
 const dataDisplay = (() => {
     /**Where weather data on city searched is shown on user interface.*/
 
-    let _div = document.getElementById('cardDataDisplay'); 
+    let _dataDisplayDiv = document.getElementById('data'); 
 
-    const update = (dataMain, dataWeather) => {
-        console.log(dataMain);
-        console.log(dataWeather);
+
+    const update = (data) => {
         cityForm.hide();
+
+        console.log(data);
     }
 
     return { update }

@@ -13,22 +13,31 @@
   src: url(../assets/OpenSansLight.ttf);
 }
 
+#card {
+  border-radius: 25px;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
+  height: 350px;
+  margin: 100px auto 0 auto;
+  padding: 65px;
+  width: 450px;
+}
+
 #cardHeader {
   font-family: 'Open Sans Bold';
-  font-size: 72px;
+  font-size: 64px;
 }
 
 #cardCityFormInput {
   border: none;
   border-bottom: 1px solid black;
   font-family: 'Open Sans Regular';
-  font-size: 40px;
-  height: 40px;
+  font-size: 32px;
   outline: none;
   padding-bottom: 16px;
 }
 
-#cardCityFormHelpText {
+#cardCityFormHelp {
   font-family: 'Open Sans Light';
-  font-size: 24px;
+  font-size: 16px;
 }

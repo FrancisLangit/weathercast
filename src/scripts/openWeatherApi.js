@@ -14,7 +14,7 @@ const openWeatherApi = (() => {
          * 
          * @return {Promise} Promise holding weather data of city as JSON.
         */
-        let url = `http://api.openweathermap.org/data/2.5/weather?q=${
+        let url = `//api.openweathermap.org/data/2.5/weather?q=${
             cityName}&APPID=${_apiKey}`;
         return fetch(url, {mode: 'cors'})
             .then(response => response.json());

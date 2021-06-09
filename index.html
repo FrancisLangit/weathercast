@@ -8,21 +8,31 @@
     
     <script src="main.js" async></script>
      
-    <title>Weathercast</title>
+    <title>
+        Weathercast
+    </title>
 </head>
 
 <body>
-    <h1>Weathercast</h1>
+    <div id="card">
+        <h1 id="cardHeader">
+            Weathercast
+        </h1>
 
-    <form id="searchCityForm">
-        <input 
-            type="text" 
-            id="searchCityInput" 
-            placeholder="What city?">
-        <button>Submit</button>
-    </form>
-
-    <div id="weatherDataDisplay"></div>
+        <div id="cardCityForm">
+            <form>
+                <input 
+                    id="cardCityFormInput" 
+                    type="text" 
+                    placeholder="What city?">
+                <p id='cardCityFormHelpText'>
+                    Press enter to search.
+                </p>
+            </form>
+        </div>
+    
+        <div id="cardDataDisplay"></div>
+    </div>
 </body>
 
 </html>

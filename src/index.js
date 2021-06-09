@@ -28,16 +28,16 @@ const openWeatherApi = (() => {
 })();
 
 
-const searchCityForm = (() => {
+const cityForm = (() => {
     /**Form that user fills in when searching for a city.*/
 
     const _displayWeatherData = () => {
         /**
          * Displays weather data of city queried by user in form.
          */
-        let userInput = document.getElementById('searchCityInput').value;
+        let userInput = document.getElementById('cardCityFormInput').value;
         openWeatherApi.getPromise(userInput)
-            .then(data => weatherDataDisplay.update(
+            .then(data => dataDisplay.update(
                 data.main, 
                 data.weather[0],
             )
@@ -51,7 +51,7 @@ const searchCityForm = (() => {
          * Adds submit event listener to form making it display data from Open
          * Weather API based on user's inputted city.
          */
-        let form = document.getElementById('searchCityForm');
+        let form = document.getElementById('cardCityForm');
         form.addEventListener('submit', event => {
             event.preventDefault(); // Prevent submit from refreshing browser.
             _displayWeatherData();
@@ -62,10 +62,10 @@ const searchCityForm = (() => {
 })();
 
 
-const weatherDataDisplay = (() => {
+const dataDisplay = (() => {
     /**Where weather data on city searched is shown on user interface.*/
 
-    let _div = document.getElementById('weatherDataDisplay'); 
+    let _div = document.getElementById('cardDataDisplay'); 
 
     const update = (dataMain, dataWeather) => {
         console.log(dataMain);

@@ -84,11 +84,11 @@ const cityForm = (() => {
 const unitConversion = (() => {
 
     const getKelvinToCelcius = (kelvinTemp) => {
-        return (kelvinTemp - 273.15).toFixed(2);
+        return `${(kelvinTemp - 273.15).toFixed(2)}°C`;
     }
 
     const getKelvinToFahrenheit = (kelvinTemp) => {
-        return ((kelvinTemp - 273.15) * (9/5) + 32).toFixed(2);
+        return `${((kelvinTemp - 273.15) * (9/5) + 32).toFixed(2)}°C`;
     }
 
     return {
@@ -106,15 +106,11 @@ const dataDisplay = (() => {
         header.innerHTML = `${data.name}, ${data.sys.country}`;
     }
 
-    const _updateDataMain = (data) => {
-        let iconSrc = (
+    const _updateDataMain = (data, tempCb) => {
+        document.getElementById('dataMainIcon').src = (
             `//openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`);
-        document.getElementById('dataMainIcon').src = iconSrc;
-
-        let temp = unitConversion.getKelvinToCelcius(data.main.temp);
-        let description = data.weather[0].description;
         document.getElementById('dataMainText').innerHTML = (
-            `${temp} • ${description}`);
+            `${tempCb(data.main.temp)} • ${data.weather[0].description}`);
     }
 
     const _getDetailsTableRow = (thContent, tdContent) => {
@@ -130,12 +126,13 @@ const dataDisplay = (() => {
         return tr;
     }
 
-    const _updateDetailsTable = (data) => {
+    const _updateDetailsTable = (data, tempCb) => {
         let detailsTable = document.getElementById('dataDetails');
         detailsTable.appendChild(_getDetailsTableRow(
-            'Real Feel', data.main.feels_like));
+            'Real Feel', tempCb(data.main.feels_like)));
         detailsTable.appendChild(_getDetailsTableRow(
-            'Low / High', `${data.main.temp_min} / ${data.main.temp_max}`));
+            'Low / High', 
+            `${tempCb(data.main.temp_min)} / ${tempCb(data.main.temp_max)}`));
         detailsTable.appendChild(_getDetailsTableRow(
             'Pressure', data.main.pressure));
         detailsTable.appendChild(_getDetailsTableRow(
@@ -154,8 +151,8 @@ const dataDisplay = (() => {
         cityForm.hide();
         document.getElementById('data').style.display = 'block';
         _updateHeader(data);
-        _updateDataMain(data);
-        _updateDetailsTable(data);
+        _updateDataMain(data, unitConversion.getKelvinToCelcius);
+        _updateDetailsTable(data, unitConversion.getKelvinToCelcius);
     }
 
     return { update }

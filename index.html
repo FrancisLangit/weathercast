@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="widtd=device-widtd, initial-scale=1.0">
     
     <script src="main.js" async></script>
      
@@ -15,78 +15,25 @@
 
 <body>
     <div class="card">
-        <!-- <div id="cityForm">
-            <h1 id="cityFormHeader">
-                Weathercast
-            </h1>
+        <div id="cityForm">
+            <h1 id="cityFormHeader">Weathercast</h1>
 
             <form>
                 <input 
                     id="cityFormInput" 
                     type="text" 
                     placeholder="What city?">
-                <p id='cityFormHelp'>
-                    Press enter to search.
-                </p>
+                <p id='cityFormHelp'>Press enter to search.</p>
             </form>
-        </div> -->
+        </div>
     
         <div id="data">
-            <p id="dataHeader">Manila, PH</p>
-
+            <p id="dataHeader"></p>
             <div id="dataMain">
-                <img 
-                    id="dataMainIcon"
-                    src="http://openweathermap.org/img/wn/10d@2x.png">
-                <p class="divider">•</p>
-                <p id="dataMainTemp">35°C</p>
-                <p class="divider">•</p>
-                <p id="dataMainDescription">Overcast Clouds</p>
+                <img id="dataMainIcon">
+                <p id="dataMainText"></p>
             </div>
-
-            <div id="dataDetails">
-                <table>
-                    <tr>
-                        <th>Real Feel</th>
-                        <th id="dataDetailsFeel">35°C</th>
-                    </tr>
-
-                    <tr>
-                        <th>Low / High</th>
-                        <th id="dataDetailsLowHigh">32°C / 35°C</th>
-                    </tr>
-
-                    <tr>
-                        <th>Clouds</th>
-                        <th id="dataDetailsClouds">67%</th>
-                    </tr>
-
-                    <tr>
-                        <th>Sunrise</th>
-                        <th id="dataDetailsSunrise">5:00am</th>
-                    </tr>
-
-                    <tr>
-                        <th>Sunset</th>
-                        <th id="dataDetailsSunset">5:00pm</th>
-                    </tr>
-
-                    <tr>
-                        <th>Pressure</th>
-                        <th id="dataDetailsPressure">1010</th>
-                    </tr>
-
-                    <tr>
-                        <th>Humidity</th>
-                        <th id="dataDetailsHumidity">71</th>
-                    </tr>
-
-                    <tr>
-                        <th>Wind</th>
-                        <th id="dataDetailsWind">1.34 m/s</th>
-                    </tr>
-                </table>
-            </div>
+            <table id="dataDetails"></table>
         </div>
     </div>
 </body>

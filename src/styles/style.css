@@ -15,7 +15,7 @@
 
 .card {
   border-radius: 25px;
-  border: 2px solid #dddddd;
+  border: 1px solid #cdcdcd;
   height: 600px;
   margin: 50px auto 0 auto;
   padding: 30px 55px;
@@ -47,21 +47,22 @@
 
 #dataHeader {
   font-family: "Open Sans Bold";
-  font-size: 32px;
+  font-size: 28px;
 }
 
 #dataMain {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border-bottom: 1px solid #dddddd;
+  border-bottom: 1px solid #cdcdcd;
+  border-top: 1px solid #cdcdcd;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding-bottom: 10px;
+  padding: 10px;
   height: 95px;
 }
 
@@ -88,7 +89,7 @@
 }
 
 #dataDetails th, #dataDetails td {
-  border-bottom: 1px solid #dddddd;
+  border-bottom: 1px solid #cdcdcd;
   padding: 8px;
   text-align: left;
 }

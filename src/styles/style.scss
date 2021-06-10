@@ -1,13 +1,13 @@
 @import '_fonts';
 
-$border-color: rgb(221, 221, 221);
+$border-color: rgb(205, 205, 205);
 $font-bold: 'Open Sans Bold';
 $font-regular: 'Open Sans Regular';
 $font-light: 'Open Sans Light';
 
 .card {
     border-radius: 25px;
-    border: 2px solid $border-color;
+    border: 1px solid $border-color;
     height: 600px;
     margin: 50px auto 0 auto;
     padding: 30px 55px;
@@ -40,15 +40,16 @@ $font-light: 'Open Sans Light';
 
     &Header {
         font-family: $font-bold;
-        font-size: 32px;
+        font-size: 28px;
     }
 
     &Main {
         align-items: center;
         border-bottom: 1px solid $border-color;
+        border-top: 1px solid $border-color;
         display: flex;
         justify-content: center;
-        padding-bottom: 10px;
+        padding: 10px;
         height: 95px;
 
         &Icon {

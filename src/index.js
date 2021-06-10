@@ -41,7 +41,9 @@ const cityForm = (() => {
          */
         let userInput = document.getElementById('cityFormInput').value;
         openWeatherApi.getPromise(userInput)
-            .then(data => dataDisplay.update(data));
+            .then(data => {
+                dataDisplay.update(data, dataConversion.getKelvinToCelcius);
+            });
     }
 
 
@@ -77,21 +79,36 @@ const cityForm = (() => {
 
     _setUp();
 
-    return { hide, show}
+    return { hide, show }
 })();
 
 
 const dataConversion = (() => {
+    /**Methods that returned converted values of numerical units. */
 
     const getFormattedUnix = (unixTime) => {
+        /**Converst Unix time to standard time.
+         * 
+         * @param {int} unixTime Time in Unix.
+        */
         return new Date(new Date(unixTime * 1000)).toLocaleTimeString();
     }
 
     const getKelvinToCelcius = (kelvinTemp) => {
+        /**
+         * Converts Kelvin temperature to Celcius.
+         * 
+         * @param {float} kelvinTemp Temperature in Kelvin. 
+        */
         return `${(kelvinTemp - 273.15).toFixed(2)}°C`;
     }
 
     const getKelvinToFahrenheit = (kelvinTemp) => {
+        /**
+         * Converts Kelvin temperature to Celcius.
+         * 
+         * @param {float} kelvinTemp Temperature in Kelvin. 
+        */
         return `${((kelvinTemp - 273.15) * (9/5) + 32).toFixed(2)}°F`;
     }
 
@@ -99,7 +116,6 @@ const dataConversion = (() => {
         getFormattedUnix,
         getKelvinToCelcius,
         getKelvinToFahrenheit,
-
     }
 })();
 
@@ -108,11 +124,23 @@ const dataDisplay = (() => {
     /**Where weather data on city searched is shown on user interface.*/
 
     const _updateHeader = (data) => {
+        /**
+         * Updates the location displayed on the header.
+         * 
+         * @param {Object} data Object returned calling Open Weather API.
+         */
         let header = document.getElementById('dataHeader');
         header.innerHTML = `${data.name}, ${data.sys.country}`;
     }
 
     const _updateDataMain = (data, tempCb) => {
+        /**
+         * Updates icon, temperature, and description displayed under header.
+         * 
+         * @param {Object} data Object returned calling Open Weather API.
+         * @param {Function} tempCb Callback that converts temperature in 
+         *      Kelvin to another unit.   
+         */
         document.getElementById('dataMainIcon').src = (
             `//openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`);
         document.getElementById('dataMainText').innerHTML = (
@@ -120,6 +148,12 @@ const dataDisplay = (() => {
     }
 
     const _getDetailsTableRow = (thContent, tdContent) => {
+        /**
+         * Returns a table row node with innerHTML equal to arguments passed.
+         * 
+         * @param {string} thContent Text content of left column cell.
+         * @param {string} tdContent Text content of right column cell. 
+         */
         let th = document.createElement('th');
         th.innerHTML = thContent;
         
@@ -133,6 +167,13 @@ const dataDisplay = (() => {
     }
 
     const _updateDetailsTable = (data, tempCb) => {
+        /**
+         * Updates contents of the data showing supplementary data from API. 
+         * 
+         * @param {Object} data Object returned calling Open Weather API.
+         * @param {Function} tempCb Callback that converts temperature in 
+         *      Kelvin to another unit.   
+         */
         let detailsTable = document.getElementById('dataDetails');
         detailsTable.append(
             _getDetailsTableRow(
@@ -168,13 +209,28 @@ const dataDisplay = (() => {
         );
     }
 
-    const update = (data) => {
+    const _show = () => {
+        /** 
+         * Makes the div displaying data from API visible. 
+        */
+        let dataDiv = document.getElementById('data');
+        dataDiv.style.display = 'block';
+    }
+
+    const update = (data, tempCb) => {
+        /**
+         * Shows data display in card and updates its contents.
+         * 
+         * @param {Object} data Object returned calling Open Weather API.
+         * @param {Function} tempCb Callback that converts temperature in 
+         *      Kelvin to another unit.
+         */
         cityForm.hide();
-        document.getElementById('data').style.display = 'block';
+        _show()
         _updateHeader(data);
-        _updateDataMain(data, dataConversion.getKelvinToCelcius);
-        _updateDetailsTable(data, dataConversion.getKelvinToCelcius);
+        _updateDataMain(data, tempCb);
+        _updateDetailsTable(data, tempCb);
     }
 
     return { update }
-})(); 
+})();

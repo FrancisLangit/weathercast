@@ -15,8 +15,7 @@
 
 .card {
   border-radius: 25px;
-  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
-          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
+  border: 2px solid #dddddd;
   height: 600px;
   margin: 50px auto 0 auto;
   padding: 30px 55px;
@@ -24,45 +23,73 @@
 }
 
 #cityFormHeader {
-  font-family: 'Open Sans Bold';
+  font-family: "Open Sans Bold";
   font-size: 64px;
 }
 
 #cityFormInput {
   border: none;
   border-bottom: 1px solid black;
-  font-family: 'Open Sans Regular';
+  font-family: "Open Sans Regular";
   font-size: 32px;
   outline: none;
   padding-bottom: 16px;
 }
 
 #cityFormHelp {
-  font-family: 'Open Sans Light';
+  font-family: "Open Sans Light";
   font-size: 16px;
 }
 
 #dataHeader {
-  font-family: 'Open Sans Bold';
+  font-family: "Open Sans Bold";
   font-size: 32px;
 }
 
 #dataMain {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  border-bottom: 1px solid #dddddd;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-bottom: 10px;
+  height: 95px;
 }
 
-#dataMainDivider {
-  border: 1px solid #d7d7d7;
-  height: 75px;
-  margin: 0 15px 0 15px;
+#dataMainIcon {
+  background-color: #cdcdcd;
+  border-radius: 30px;
+  width: auto;
+  height: 60px;
 }
 
-#dataMainTemp {
-  font-family: 'Open Sans Bold';
+#dataMainTemp, #dataMainDescription {
+  font-family: "Open Sans Regular";
   font-size: 24px;
+}
+
+#dataMain .divider {
+  margin: 0 15px;
+}
+
+#dataDetails {
+  margin-top: 30px;
+  font-family: "Open Sans Light";
+  font-size: 16px;
+}
+
+#dataDetails table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#dataDetails th, #dataDetails td {
+  border-bottom: 1px solid #dddddd;
+  padding: 8px;
+  text-align: left;
 }

@@ -1,8 +1,13 @@
 @import '_fonts';
 
+$border-color: rgb(221, 221, 221);
+$font-bold: 'Open Sans Bold';
+$font-regular: 'Open Sans Regular';
+$font-light: 'Open Sans Light';
+
 .card {
     border-radius: 25px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
+    border: 2px solid $border-color;
     height: 600px;
     margin: 50px auto 0 auto;
     padding: 30px 55px;
@@ -11,44 +16,70 @@
 
 #cityForm {
     &Header {
-        font-family: 'Open Sans Bold';
+        font-family: $font-bold;
         font-size: 64px;
     }
 
     &Input {
         border: none;
         border-bottom: 1px solid black;
-        font-family: 'Open Sans Regular';
+        font-family: $font-regular;
         font-size: 32px;
         outline: none;
         padding-bottom: 16px;
     }
 
     &Help {
-        font-family: 'Open Sans Light';
+        font-family: $font-light;
         font-size: 16px;
     }
 }
 
 #data {
     &Header {
-        font-family: 'Open Sans Bold';
+        font-family: $font-bold;
         font-size: 32px;
     }
 
     &Main {
-        display: flex;
         align-items: center;
+        border-bottom: 1px solid $border-color;
+        display: flex;
+        justify-content: center;
+        padding-bottom: 10px;
+        height: 95px;
 
-        &Divider {
-            border: 1px solid rgb(215, 215, 215);
-            height: 75px;
-            margin: 0 15px 0 15px;
-        }    
+        &Icon {
+            background-color: rgb(205, 205, 205);
+            border-radius: 30px;
+            width: auto;
+            height: 60px;
+        }
 
-        &Temp {
-            font-family: 'Open Sans Bold';
+        &Temp, &Description {
+            font-family: $font-regular;
             font-size: 24px;
+        }
+
+        .divider {
+            margin: 0 15px;
+        }
+    }
+
+    &Details {
+        margin-top: 30px;
+        font-family: $font-light;
+        font-size: 16px;
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border-bottom: 1px solid $border-color;
+            padding: 8px;
+            text-align: left;
         }
     }
 }

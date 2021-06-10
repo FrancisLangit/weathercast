@@ -81,19 +81,25 @@ const cityForm = (() => {
 })();
 
 
-const unitConversion = (() => {
+const dataConversion = (() => {
+
+    const getFormattedUnix = (unixTime) => {
+        return new Date(new Date(unixTime * 1000)).toLocaleTimeString();
+    }
 
     const getKelvinToCelcius = (kelvinTemp) => {
         return `${(kelvinTemp - 273.15).toFixed(2)}°C`;
     }
 
     const getKelvinToFahrenheit = (kelvinTemp) => {
-        return `${((kelvinTemp - 273.15) * (9/5) + 32).toFixed(2)}°C`;
+        return `${((kelvinTemp - 273.15) * (9/5) + 32).toFixed(2)}°F`;
     }
 
     return {
+        getFormattedUnix,
         getKelvinToCelcius,
         getKelvinToFahrenheit,
+
     }
 })();
 
@@ -128,31 +134,46 @@ const dataDisplay = (() => {
 
     const _updateDetailsTable = (data, tempCb) => {
         let detailsTable = document.getElementById('dataDetails');
-        detailsTable.appendChild(_getDetailsTableRow(
-            'Real Feel', tempCb(data.main.feels_like)));
-        detailsTable.appendChild(_getDetailsTableRow(
-            'Low / High', 
-            `${tempCb(data.main.temp_min)} / ${tempCb(data.main.temp_max)}`));
-        detailsTable.appendChild(_getDetailsTableRow(
-            'Pressure', data.main.pressure));
-        detailsTable.appendChild(_getDetailsTableRow(
-            'Humidity', data.main.humidity));
-        detailsTable.appendChild(_getDetailsTableRow(
-            'Wind Speed', `${data.wind.speed} m/s`));
-        detailsTable.appendChild(_getDetailsTableRow(
-            'Clouds', `${data.clouds.all}%`));
-        detailsTable.appendChild(_getDetailsTableRow(
-            'Sunrise', data.sys.sunrise));
-        detailsTable.appendChild(_getDetailsTableRow(
-            'Sunset', data.sys.sunset));
+        detailsTable.append(
+            _getDetailsTableRow(
+                'Real Feel', 
+                tempCb(data.main.feels_like)
+            ),
+            _getDetailsTableRow(
+                'Low/High', 
+                `${tempCb(data.main.temp_min)}/${tempCb(data.main.temp_max)}`
+            ),
+            _getDetailsTableRow(
+                'Pressure', 
+                `${data.main.pressure} hPa`
+            ),
+            _getDetailsTableRow(
+                'Humidity', 
+                `${data.main.humidity}%`
+            ),
+            _getDetailsTableRow(
+                'Wind Speed', `${data.wind.speed} m/s`
+            ),
+            _getDetailsTableRow(
+                'Clouds', `${data.clouds.all}%`
+            ),
+            _getDetailsTableRow(
+                'Sunrise', 
+                dataConversion.getFormattedUnix(data.sys.sunrise)
+            ),
+            _getDetailsTableRow(
+                'Sunset', 
+                dataConversion.getFormattedUnix(data.sys.sunset)
+            ),
+        );
     }
 
     const update = (data) => {
         cityForm.hide();
         document.getElementById('data').style.display = 'block';
         _updateHeader(data);
-        _updateDataMain(data, unitConversion.getKelvinToCelcius);
-        _updateDetailsTable(data, unitConversion.getKelvinToCelcius);
+        _updateDataMain(data, dataConversion.getKelvinToCelcius);
+        _updateDetailsTable(data, dataConversion.getKelvinToCelcius);
     }
 
     return { update }

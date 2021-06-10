@@ -41,6 +41,10 @@
   font-size: 16px;
 }
 
+#data {
+  display: none;
+}
+
 #dataHeader {
   font-family: "Open Sans Bold";
   font-size: 32px;
@@ -63,28 +67,23 @@
 
 #dataMainIcon {
   background-color: #cdcdcd;
-  border-radius: 30px;
-  width: auto;
+  border-radius: 50%;
+  border: 1px solid #b9b9b9;
   height: 60px;
+  margin-right: 15px;
+  width: auto;
 }
 
-#dataMainTemp, #dataMainDescription {
+#dataMainText {
   font-family: "Open Sans Regular";
   font-size: 24px;
 }
 
-#dataMain .divider {
-  margin: 0 15px;
-}
-
 #dataDetails {
-  margin-top: 30px;
+  border-collapse: collapse;
   font-family: "Open Sans Light";
   font-size: 16px;
-}
-
-#dataDetails table {
-  border-collapse: collapse;
+  margin-top: 30px;
   width: 100%;
 }
 
@@ -92,4 +91,8 @@
   border-bottom: 1px solid #dddddd;
   padding: 8px;
   text-align: left;
+}
+
+#dataDetails th {
+  font-family: "Open Sans Bold";
 }

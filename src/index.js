@@ -84,13 +84,57 @@ const cityForm = (() => {
 const dataDisplay = (() => {
     /**Where weather data on city searched is shown on user interface.*/
 
-    let _dataDisplayDiv = document.getElementById('data'); 
+    const _updateHeader = (data) => {
+        let header = document.getElementById('dataHeader');
+        header.innerHTML = `${data.name}, ${data.sys.country}`;
+    }
 
+    const _updateDataMain = (data) => {
+        document.getElementById('dataMainIcon').src = (
+            `//openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`);
+        document.getElementById('dataMainText').innerHTML = (
+            `${data.main.temp} • ${data.weather[0].description}`);
+    }
+
+    const _getDetailsTableRow = (thContent, tdContent) => {
+        let th = document.createElement('th');
+        th.innerHTML = thContent;
+        
+        let td = document.createElement('td');
+        td.innerHTML = tdContent;
+
+        let tr = document.createElement('tr');
+        tr.append(th, td);
+
+        return tr;
+    }
+
+    const _updateDetailsTable = (data) => {
+        let detailsTable = document.getElementById('dataDetails');
+        detailsTable.appendChild(_getDetailsTableRow(
+            'Real Feel', data.main.feels_like));
+        detailsTable.appendChild(_getDetailsTableRow(
+            'Low / High', `${data.main.temp_min} / ${data.main.temp_max}`));
+        detailsTable.appendChild(_getDetailsTableRow(
+            'Pressure', data.main.pressure));
+        detailsTable.appendChild(_getDetailsTableRow(
+            'Humidity', data.main.humidity));
+        detailsTable.appendChild(_getDetailsTableRow(
+            'Wind Speed', `${data.wind.speed} m/s`));
+        detailsTable.appendChild(_getDetailsTableRow(
+            'Clouds', `${data.clouds.all}%`));
+        detailsTable.appendChild(_getDetailsTableRow(
+            'Sunrise', data.sys.sunrise));
+        detailsTable.appendChild(_getDetailsTableRow(
+            'Sunset', data.sys.sunset));
+    }
 
     const update = (data) => {
         cityForm.hide();
-
-        console.log(data);
+        document.getElementById('data').style.display = 'block';
+        _updateHeader(data);
+        _updateDataMain(data);
+        _updateDetailsTable(data);
     }
 
     return { update }

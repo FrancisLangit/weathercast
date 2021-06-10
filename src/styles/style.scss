@@ -36,6 +36,8 @@ $font-light: 'Open Sans Light';
 }
 
 #data {
+    display: none;
+
     &Header {
         font-family: $font-bold;
         font-size: 32px;
@@ -51,35 +53,34 @@ $font-light: 'Open Sans Light';
 
         &Icon {
             background-color: rgb(205, 205, 205);
-            border-radius: 30px;
-            width: auto;
+            border-radius: 50%;
+            border: 1px solid rgb(185, 185, 185);
             height: 60px;
+            margin-right: 15px;
+            width: auto;
         }
 
-        &Temp, &Description {
+        &Text {
             font-family: $font-regular;
             font-size: 24px;
-        }
-
-        .divider {
-            margin: 0 15px;
         }
     }
 
     &Details {
-        margin-top: 30px;
+        border-collapse: collapse;
         font-family: $font-light;
         font-size: 16px;
-
-        table {
-            border-collapse: collapse;
-            width: 100%;
-        }
+        margin-top: 30px;
+        width: 100%;
 
         th, td {
             border-bottom: 1px solid $border-color;
             padding: 8px;
             text-align: left;
+        }
+
+        th {
+            font-family: $font-bold;
         }
     }
 }

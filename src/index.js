@@ -81,6 +81,23 @@ const cityForm = (() => {
 })();
 
 
+const unitConversion = (() => {
+
+    const getKelvinToCelcius = (kelvinTemp) => {
+        return (kelvinTemp - 273.15).toFixed(2);
+    }
+
+    const getKelvinToFahrenheit = (kelvinTemp) => {
+        return ((kelvinTemp - 273.15) * (9/5) + 32).toFixed(2);
+    }
+
+    return {
+        getKelvinToCelcius,
+        getKelvinToFahrenheit,
+    }
+})();
+
+
 const dataDisplay = (() => {
     /**Where weather data on city searched is shown on user interface.*/
 
@@ -90,10 +107,14 @@ const dataDisplay = (() => {
     }
 
     const _updateDataMain = (data) => {
-        document.getElementById('dataMainIcon').src = (
+        let iconSrc = (
             `//openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`);
+        document.getElementById('dataMainIcon').src = iconSrc;
+
+        let temp = unitConversion.getKelvinToCelcius(data.main.temp);
+        let description = data.weather[0].description;
         document.getElementById('dataMainText').innerHTML = (
-            `${data.main.temp} • ${data.weather[0].description}`);
+            `${temp} • ${description}`);
     }
 
     const _getDetailsTableRow = (thContent, tdContent) => {

@@ -16,10 +16,10 @@
 .card {
   border-radius: 25px;
   border: 1px solid #cdcdcd;
-  height: 600px;
-  margin: 50px auto 0 auto;
-  padding: 30px 55px;
+  height: 310px;
   width: 450px;
+  margin: 50px auto 0 auto;
+  padding: 25px 50px 75px 50px;
 }
 
 #cityFormHeader {
@@ -34,6 +34,7 @@
   font-size: 32px;
   outline: none;
   padding-bottom: 16px;
+  width: 450px;
 }
 
 #cityFormHelp {
@@ -100,7 +101,7 @@
 
 #dataErrorCode {
   font-family: "Open Sans Bold";
-  font-size: 64px;
+  font-size: 56px;
   margin-bottom: 0;
 }
 

@@ -1,4 +1,6 @@
-import { cityForm } from './index.js';
+import { 
+    cityForm, 
+    containerCard } from './index.js';
 
 
 const goBackButton = (() => {
@@ -15,6 +17,7 @@ const goBackButton = (() => {
          */
         document.getElementById('data').innerHTML = '';
         document.getElementById('cityFormInput').value = '';
+        containerCard.resizeSmaller();
         cityForm.show();
         _node.style.display = 'none';
     }

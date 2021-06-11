@@ -1,6 +1,8 @@
-import { cityForm } from './index.js';
-import { dataConversion } from './index.js';
-import { goBackButton } from './index.js';
+import { 
+    cityForm, 
+    containerCard, 
+    dataConversion, 
+    goBackButton} from './index.js';
 
 
 const dataDisplay = (() => {
@@ -153,7 +155,7 @@ const dataDisplay = (() => {
 
     const update = (data) => {
         /**
-         * Shows data display in card and updates its contents.
+         * Shows data display in card and updates its size and contents.
          * 
          * If data.cod returned is 200, weather data from API is displayed. 
          * Otherwise, error from call is shown. 
@@ -166,6 +168,7 @@ const dataDisplay = (() => {
         goBackButton.unhide();
         _unhide()
         if (data.cod === 200) {
+            containerCard.resizeBigger();
             _showData(data, dataConversion.getKelvinToCelcius);
         }
         else {

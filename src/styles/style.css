@@ -13,15 +13,6 @@
   src: url(../assets/OpenSansLight.ttf);
 }
 
-.card {
-  border-radius: 25px;
-  border: 1px solid #cdcdcd;
-  height: 310px;
-  width: 450px;
-  margin: 50px auto 0 auto;
-  padding: 25px 50px 75px 50px;
-}
-
 #cityFormHeader {
   font-family: "Open Sans Bold";
   font-size: 56px;
@@ -120,4 +111,13 @@
 
 #goBackButton:hover {
   text-decoration: underline;
+}
+
+.card {
+  border-radius: 25px;
+  border: 1px solid #cdcdcd;
+  height: 310px;
+  width: 450px;
+  margin: 50px auto 0 auto;
+  padding: 25px 50px 75px 50px;
 }

@@ -1,0 +1,21 @@
+#cityForm {
+    &Header {
+        font-family: $font-bold;
+        font-size: 56px;
+    }
+
+    &Input {
+        border: none;
+        border-bottom: 1px solid black;
+        font-family: $font-regular;
+        font-size: 32px;
+        outline: none;
+        padding-bottom: 16px;
+        width: 450px;
+    }
+
+    &Help {
+        font-family: $font-light;
+        font-size: 16px;
+    }
+}

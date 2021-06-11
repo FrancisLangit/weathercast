@@ -10,14 +10,21 @@ import { goBackButton } from './scripts/components/goBackButton.js';
 
 
 const temperatureButton = (() => {
+    /**
+     * Button that changes unit of temperature values displayed. 
+     */
 
 
     const _changeDataDisplayTemp = () => {
-        console.log('hello world');
+        let dataMainTemp = document.getElementById('dataMainTemp');
+        dataMainTemp.innerHTML = convertTemperature.getCelciusToFahrenheit(
+            parseFloat(dataMainTemp.innerHTML));
     }
 
 
-    const show = () => {
+    const create = () => {
+        /**Creates and sets up a clickable div that changes the temperature
+         * values displayed.*/
         let tempBtn = document.createElement('div');
         tempBtn.id = 'dataHeaderTempButton';
         tempBtn.innerHTML = '°C';
@@ -25,7 +32,8 @@ const temperatureButton = (() => {
         document.getElementById('dataHeader').appendChild(tempBtn);
     }
 
-    return { show }
+
+    return { create }
 })();
 
 

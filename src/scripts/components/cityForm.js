@@ -1,4 +1,7 @@
-import { openWeatherApi } from '../../index.js';
+import { 
+    convertTemperature, 
+    openWeatherApi
+} from '../../index.js';
 
 
 const cityForm = (() => {

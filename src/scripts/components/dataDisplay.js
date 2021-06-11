@@ -1,7 +1,7 @@
 import { 
     cityForm, 
     containerCard, 
-    convertTemperature, 
+    convertTemperature,
     goBackButton,
     temperatureButton,
 } from '../../index.js';
@@ -28,7 +28,7 @@ const dataDisplay = (() => {
         headerDiv.append(headerCity);
 
         document.getElementById('data').append(headerDiv);
-        temperatureButton.show();
+        temperatureButton.create();
     }
 
 
@@ -45,10 +45,16 @@ const dataDisplay = (() => {
         icon.src = ( 
             `//openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`);
 
+        let temp = document.createElement('span');
+        temp.id = 'dataMainTemp';
+        temp.innerHTML = tempCb(data.main.temp);
+
+        let description = document.createElement('span');
+        description.innerHTML = ` • ${data.weather[0].description}`;
+
         let text = document.createElement('p');
         text.id = 'dataMainText';
-        text.textContent = (
-            `${tempCb(data.main.temp)} • ${data.weather[0].description}`);
+        text.append(temp, description);
 
         let dataMain = document.createElement('div');
         dataMain.id = 'dataMain';
@@ -58,12 +64,13 @@ const dataDisplay = (() => {
     }
 
 
-    const _getDetailsTableRow = (thContent, tdContent) => {
+    const _getDetailsTableRow = (thContent, tdContent, id) => {
         /**
          * Returns a table row node with innerHTML equal to arguments passed.
          * 
          * @param {string} thContent Text content of left column cell.
          * @param {string} tdContent Text content of right column cell. 
+         * @param {string} id ID of the tr node to be returned.
          */
         let th = document.createElement('th');
         th.innerHTML = thContent;
@@ -72,6 +79,9 @@ const dataDisplay = (() => {
         td.innerHTML = tdContent;
 
         let tr = document.createElement('tr');
+        if (id) {
+            tr.id = id;
+        }
         tr.append(th, td);
 
         return tr;
@@ -91,11 +101,13 @@ const dataDisplay = (() => {
         dataDetailsTable.append(
             _getDetailsTableRow(
                 'Real Feel', 
-                tempCb(data.main.feels_like)
+                tempCb(data.main.feels_like),
+                'dataDetailsRealFeel',
             ),
             _getDetailsTableRow(
                 'Low/High', 
-                `${tempCb(data.main.temp_min)}/${tempCb(data.main.temp_max)}`
+                `${tempCb(data.main.temp_min)}/${tempCb(data.main.temp_max)}`,
+                'dataDetailsLowHigh'
             ),
             _getDetailsTableRow(
                 'Pressure', 
@@ -169,8 +181,6 @@ const dataDisplay = (() => {
          * Otherwise, error from call is shown. 
          * 
          * @param {Object} data Object returned calling Open Weather API.
-         * @param {Function} tempCb Callback that converts temperature in 
-         *      Kelvin to another unit.
          */
         cityForm.hide();
         goBackButton.unhide();

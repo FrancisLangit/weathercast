@@ -76,12 +76,12 @@ const dataDisplay = (() => {
         th.innerHTML = thContent;
         
         let td = document.createElement('td');
+        if (id) {
+            td.id = id;
+        }
         td.innerHTML = tdContent;
 
         let tr = document.createElement('tr');
-        if (id) {
-            tr.id = id;
-        }
         tr.append(th, td);
 
         return tr;
@@ -102,12 +102,17 @@ const dataDisplay = (() => {
             _getDetailsTableRow(
                 'Real Feel', 
                 tempCb(data.main.feels_like),
-                'dataDetailsRealFeel',
+                'dataDetailsReal',
             ),
             _getDetailsTableRow(
-                'Low/High', 
-                `${tempCb(data.main.temp_min)}/${tempCb(data.main.temp_max)}`,
-                'dataDetailsLowHigh'
+                'Low', 
+                tempCb(data.main.temp_min),
+                'dataDetailsLow'
+            ),
+            _getDetailsTableRow(
+                'High', 
+                tempCb(data.main.temp_max),
+                'dataDetailsHigh'
             ),
             _getDetailsTableRow(
                 'Pressure', 

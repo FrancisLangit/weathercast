@@ -6,8 +6,12 @@ const dataConversion = (() => {
          * 
          * @param {int} unixTime Time in Unix.
         */
-        return new Date(new Date(unixTime * 1000)).toLocaleTimeString();
+        let dateObj = new Date(unixTime * 1000);
+        let time = dateObj.toLocaleTimeString();
+        let timezone = dateObj.getTimezoneOffset() / 60;
+        return `${time} • UTC${timezone}`;
     }
+
 
     const getKelvinToCelcius = (kelvinTemp) => {
         /**
@@ -18,6 +22,7 @@ const dataConversion = (() => {
         return `${(kelvinTemp - 273.15).toFixed(2)}°C`;
     }
 
+
     const getKelvinToFahrenheit = (kelvinTemp) => {
         /**
          * Converts Kelvin temperature to Celcius.
@@ -26,6 +31,7 @@ const dataConversion = (() => {
         */
         return `${((kelvinTemp - 273.15) * (9/5) + 32).toFixed(2)}°F`;
     }
+
 
     return {
         getFormattedUnix,

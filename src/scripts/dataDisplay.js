@@ -15,6 +15,7 @@ const dataDisplay = (() => {
         header.innerHTML = `${data.name}, ${data.sys.country}`;
     }
 
+
     const _updateDataMain = (data, tempCb) => {
         /**
          * Updates icon, temperature, and description displayed under header.
@@ -28,6 +29,7 @@ const dataDisplay = (() => {
         document.getElementById('dataMainText').innerHTML = (
             `${tempCb(data.main.temp)} • ${data.weather[0].description}`);
     }
+
 
     const _getDetailsTableRow = (thContent, tdContent) => {
         /**
@@ -47,6 +49,7 @@ const dataDisplay = (() => {
 
         return tr;
     }
+
 
     const _updateDetailsTable = (data, tempCb) => {
         /**
@@ -91,6 +94,7 @@ const dataDisplay = (() => {
         );
     }
 
+
     const _show = () => {
         /** 
          * Makes the div displaying data from API visible. 
@@ -98,6 +102,7 @@ const dataDisplay = (() => {
         let dataDiv = document.getElementById('data');
         dataDiv.style.display = 'block';
     }
+
 
     const update = (data, tempCb) => {
         /**
@@ -113,6 +118,7 @@ const dataDisplay = (() => {
         _updateDataMain(data, tempCb);
         _updateDetailsTable(data, tempCb);
     }
+
 
     return { update }
 })();

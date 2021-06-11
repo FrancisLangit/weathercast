@@ -100,14 +100,6 @@ const dataDisplay = (() => {
             _getDetailsTableRow(
                 'Clouds', `${data.clouds.all}%`
             ),
-            _getDetailsTableRow(
-                'Sunrise', 
-                dataConversion.getFormattedUnix(data.sys.sunrise)
-            ),
-            _getDetailsTableRow(
-                'Sunset', 
-                dataConversion.getFormattedUnix(data.sys.sunset)
-            ),
         );
         _div.append(dataDetailsTable);
     }
@@ -136,10 +128,10 @@ const dataDisplay = (() => {
         /**
          * Updates display to show error from query.
          */
-        console.log(data.cod);
-        console.log(data.message);
+        let errorText = document.createElement('p');
+        errorText.textContent = data.cod + data.message;
 
-
+        _div.append(errorText);
     }
 
 

@@ -18,7 +18,7 @@ const containerCard = (() => {
         /**
          * Resizes the height of the card to fit contents of data from API.
          */
-        _containerCardNode.style.height = '550px';
+        _containerCardNode.style.height = '570px';
     }
 
     

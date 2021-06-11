@@ -9,7 +9,7 @@ const goBackButton = (() => {
      * Button the user clicks to go back to city search form.
      */
 
-    const _node = document.getElementById('goBackButton');
+    const _goBackButtonNode = document.getElementById('goBackButton');
 
 
     const _goBacktoForm = () => {
@@ -20,7 +20,7 @@ const goBackButton = (() => {
         document.getElementById('cityFormInput').value = '';
         containerCard.resizeSmaller();
         cityForm.show();
-        _node.style.display = 'none';
+        _goBackButtonNode.style.display = 'none';
     }
 
 
@@ -28,7 +28,7 @@ const goBackButton = (() => {
         /**
          * Adds click event listerner to node of button.
          */
-        _node.addEventListener('click', _goBacktoForm);
+        _goBackButtonNode.addEventListener('click', _goBacktoForm);
     }
 
 
@@ -36,7 +36,7 @@ const goBackButton = (() => {
         /**
          * Unhides the node of the button from user interface.
          */
-        _node.style.display = 'inline';
+        _goBackButtonNode.style.display = 'inline';
     }
 
 

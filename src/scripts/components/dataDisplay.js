@@ -2,7 +2,8 @@ import {
     cityForm, 
     containerCard, 
     convertTemperature, 
-    goBackButton
+    goBackButton,
+    temperatureButton,
 } from '../../index.js';
 
 
@@ -18,10 +19,16 @@ const dataDisplay = (() => {
          * 
          * @param {Object} data Object returned calling Open Weather API.
          */
-        let header = document.createElement('p');
-        header.id = 'dataHeader';
-        header.innerHTML = `${data.name}, ${data.sys.country}`
-        _div.appendChild(header);
+        let headerCity = document.createElement('p');
+        headerCity.id = 'dataHeaderCity'
+        headerCity.innerHTML = `${data.name}, ${data.sys.country}`
+
+        let headerDiv = document.createElement('div');
+        headerDiv.id = 'dataHeader';
+        headerDiv.append(headerCity);
+
+        document.getElementById('data').append(headerDiv);
+        temperatureButton.show();
     }
 
 

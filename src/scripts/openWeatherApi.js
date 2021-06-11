@@ -1,4 +1,4 @@
-import { dataDisplay } from './index.js';
+import { dataDisplay } from '../index.js';
 
 
 const openWeatherApi = (() => {

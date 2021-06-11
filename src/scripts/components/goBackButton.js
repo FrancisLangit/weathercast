@@ -1,6 +1,7 @@
 import { 
     cityForm, 
-    containerCard } from './index.js';
+    containerCard 
+} from '../../index.js';
 
 
 const goBackButton = (() => {

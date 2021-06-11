@@ -1,4 +1,4 @@
-const dataConversion = (() => {
+const convertTemperature = (() => {
     /**Methods that return converted values of numerical units. */
 
 
@@ -29,4 +29,4 @@ const dataConversion = (() => {
 })();
 
 
-export { dataConversion }
+export { convertTemperature }

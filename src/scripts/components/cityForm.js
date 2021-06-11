@@ -1,4 +1,4 @@
-import { openWeatherApi } from './index.js';
+import { openWeatherApi } from '../../index.js';
 
 
 const cityForm = (() => {

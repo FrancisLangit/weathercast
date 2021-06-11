@@ -1,8 +1,9 @@
 import { 
     cityForm, 
     containerCard, 
-    dataConversion, 
-    goBackButton} from './index.js';
+    convertTemperature, 
+    goBackButton
+} from '../../index.js';
 
 
 const dataDisplay = (() => {
@@ -169,7 +170,7 @@ const dataDisplay = (() => {
         _unhide()
         if (data.cod === 200) {
             containerCard.resizeBigger();
-            _showData(data, dataConversion.getKelvinToCelcius);
+            _showData(data, convertTemperature.getKelvinToCelcius);
         }
         else {
             _showError(data);

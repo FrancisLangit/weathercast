@@ -1,5 +1,6 @@
 import { cityForm } from './index.js';
 import { dataConversion } from './index.js';
+import { goBackButton } from './index.js';
 
 
 const dataDisplay = (() => {
@@ -154,11 +155,15 @@ const dataDisplay = (() => {
         /**
          * Shows data display in card and updates its contents.
          * 
+         * If data.cod returned is 200, weather data from API is displayed. 
+         * Otherwise, error from call is shown. 
+         * 
          * @param {Object} data Object returned calling Open Weather API.
          * @param {Function} tempCb Callback that converts temperature in 
          *      Kelvin to another unit.
          */
         cityForm.hide();
+        goBackButton.unhide();
         _unhide()
         if (data.cod === 200) {
             _showData(data, dataConversion.getKelvinToCelcius);

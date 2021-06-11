@@ -1,4 +1,3 @@
-import { dataConversion } from './index.js';
 import { dataDisplay } from './index.js';
 
 
@@ -12,12 +11,10 @@ const openWeatherApi = (() => {
         /**
          * Get promise from API holding weather data of a city. 
          * 
-         * Returns promise from Open Weather API with value as JSON object
-         * holding weather data of city requested.
+         * Passed promise from Open Weather API with value as JSON object
+         * holding weather data of city requested to dataDisplay.update().
          * 
          * @param {string} cityName Name of city to get data for.
-         * 
-         * @return {Promise} Promise holding weather data of city as JSON.
         */
         let url = `//api.openweathermap.org/data/2.5/weather?q=${
             cityName}&APPID=${_apiKey}`;

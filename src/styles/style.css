@@ -16,7 +16,7 @@
 .card {
   border-radius: 25px;
   border: 1px solid #cdcdcd;
-  height: 525px;
+  height: 600px;
   margin: 50px auto 0 auto;
   padding: 30px 55px;
   width: 450px;
@@ -84,7 +84,7 @@
   border-collapse: collapse;
   font-family: "Open Sans Light";
   font-size: 16px;
-  margin-top: 30px;
+  margin: 40px 0;
   width: 100%;
 }
 
@@ -101,10 +101,22 @@
 #dataErrorCode {
   font-family: "Open Sans Bold";
   font-size: 64px;
+  margin-bottom: 0;
 }
 
 #dataErrorMessage {
   font-family: "Open Sans Light";
   font-size: 32px;
   text-transform: capitalize;
+}
+
+#goBackButton {
+  cursor: pointer;
+  display: none;
+  font-family: "Open Sans Bold";
+  font-size: 24px;
+}
+
+#goBackButton:hover {
+  text-decoration: underline;
 }

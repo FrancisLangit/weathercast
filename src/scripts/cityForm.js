@@ -1,5 +1,3 @@
-import { dataConversion } from './index.js';
-import { dataDisplay } from './index.js';
 import { openWeatherApi } from './index.js';
 
 
@@ -14,10 +12,7 @@ const cityForm = (() => {
          * Displays weather data of city queried by user in form.
          */
         let userInput = document.getElementById('cityFormInput').value;
-        openWeatherApi.getPromise(userInput)
-            .then(data => {
-                dataDisplay.update(data, dataConversion.getKelvinToCelcius);
-            });
+        openWeatherApi.call(userInput);
     }
 
 

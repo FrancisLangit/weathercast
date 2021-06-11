@@ -2,7 +2,8 @@ const dataConversion = (() => {
     /**Methods that returned converted values of numerical units. */
 
     const getFormattedUnix = (unixTime) => {
-        /**Converst Unix time to standard time.
+        /**Returns a string with display of passed Unix time in standard time
+         * and timezone of user.
          * 
          * @param {int} unixTime Time in Unix.
         */
@@ -15,7 +16,7 @@ const dataConversion = (() => {
 
     const getKelvinToCelcius = (kelvinTemp) => {
         /**
-         * Converts Kelvin temperature to Celcius.
+         * Returns string of Kelvin temperature converted to Celcius.
          * 
          * @param {float} kelvinTemp Temperature in Kelvin. 
         */
@@ -25,7 +26,7 @@ const dataConversion = (() => {
 
     const getKelvinToFahrenheit = (kelvinTemp) => {
         /**
-         * Converts Kelvin temperature to Celcius.
+         * Returns string of Kelvin temperature converted to Fahrenheit.
          * 
          * @param {float} kelvinTemp Temperature in Kelvin. 
         */

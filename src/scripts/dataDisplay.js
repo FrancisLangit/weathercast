@@ -4,6 +4,9 @@ import { dataConversion } from './index.js';
 
 const dataDisplay = (() => {
     /**Where weather data on city searched is shown on user interface.*/
+    
+    const _div = document.getElementById('data');
+
 
     const _updateHeader = (data) => {
         /**
@@ -11,8 +14,10 @@ const dataDisplay = (() => {
          * 
          * @param {Object} data Object returned calling Open Weather API.
          */
-        let header = document.getElementById('dataHeader');
-        header.innerHTML = `${data.name}, ${data.sys.country}`;
+        let header = document.createElement('p');
+        header.id = 'dataHeader';
+        header.innerHTML = `${data.name}, ${data.sys.country}`
+        _div.appendChild(header);
     }
 
 
@@ -24,10 +29,21 @@ const dataDisplay = (() => {
          * @param {Function} tempCb Callback that converts temperature in 
          *      Kelvin to another unit.   
          */
-        document.getElementById('dataMainIcon').src = (
+        let icon = document.createElement('img');
+        icon.id = 'dataMainIcon';
+        icon.src = ( 
             `//openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`);
-        document.getElementById('dataMainText').innerHTML = (
+
+        let text = document.createElement('p');
+        text.id = 'dataMainText';
+        text.textContent = (
             `${tempCb(data.main.temp)} • ${data.weather[0].description}`);
+
+        let dataMain = document.createElement('div');
+        dataMain.id = 'dataMain';
+        dataMain.append(icon, text);
+
+        _div.append(dataMain);
     }
 
 
@@ -59,8 +75,9 @@ const dataDisplay = (() => {
          * @param {Function} tempCb Callback that converts temperature in 
          *      Kelvin to another unit.   
          */
-        let detailsTable = document.getElementById('dataDetails');
-        detailsTable.append(
+        let dataDetailsTable = document.createElement('table');
+        dataDetailsTable.id = 'dataDetails';
+        dataDetailsTable.append(
             _getDetailsTableRow(
                 'Real Feel', 
                 tempCb(data.main.feels_like)
@@ -92,10 +109,11 @@ const dataDisplay = (() => {
                 dataConversion.getFormattedUnix(data.sys.sunset)
             ),
         );
+        _div.append(dataDetailsTable);
     }
 
 
-    const _show = () => {
+    const _unhide = () => {
         /** 
          * Makes the div displaying data from API visible. 
         */
@@ -104,7 +122,28 @@ const dataDisplay = (() => {
     }
 
 
-    const update = (data, tempCb) => {
+    const _showData = (data, tempCb) => {
+        /**
+         * Updates display to show weather data of city searched.
+         */
+        _updateHeader(data);
+        _updateDataMain(data, tempCb);
+        _updateDetailsTable(data, tempCb);
+    }
+
+
+    const _showError = (data) => {
+        /**
+         * Updates display to show error from query.
+         */
+        console.log(data.cod);
+        console.log(data.message);
+
+
+    }
+
+
+    const update = (data) => {
         /**
          * Shows data display in card and updates its contents.
          * 
@@ -113,10 +152,14 @@ const dataDisplay = (() => {
          *      Kelvin to another unit.
          */
         cityForm.hide();
-        _show()
-        _updateHeader(data);
-        _updateDataMain(data, tempCb);
-        _updateDetailsTable(data, tempCb);
+        _unhide()
+
+        if (data.cod === 200) {
+            _showData(data, dataConversion.getKelvinToCelcius);
+        }
+        else {
+            _showError(data);
+        }
     }
 
 

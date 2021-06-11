@@ -1,5 +1,5 @@
 const dataConversion = (() => {
-    /**Methods that returned converted values of numerical units. */
+    /**Methods that return converted values of numerical units. */
 
 
     const getKelvinToCelcius = (kelvinTemp) => {

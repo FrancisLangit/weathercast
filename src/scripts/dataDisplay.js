@@ -117,6 +117,10 @@ const dataDisplay = (() => {
     const _showData = (data, tempCb) => {
         /**
          * Updates display to show weather data of city searched.
+         * 
+         * @param {Object} data Object returned calling Open Weather API.
+         * @param {Function} tempCb Callback that converts temperature in 
+         *      Kelvin to another unit.
          */
         _updateHeader(data);
         _updateDataMain(data, tempCb);
@@ -127,11 +131,22 @@ const dataDisplay = (() => {
     const _showError = (data) => {
         /**
          * Updates display to show error from query.
+         * 
+         * @param {Object} data Object returned calling Open Weather API.
          */
-        let errorText = document.createElement('p');
-        errorText.textContent = data.cod + data.message;
+        let errorCode = document.createElement('p');
+        errorCode.id = 'dataErrorCode';
+        errorCode.textContent = `Error ${data.cod}`;
 
-        _div.append(errorText);
+        let errorMessage = document.createElement('p');
+        errorMessage.id = 'dataErrorMessage';
+        errorMessage.textContent = data.message;
+
+        let errorDiv = document.createElement('div');
+        errorDiv.id = 'dataError';
+        errorDiv.append(errorCode, errorMessage);
+
+        _div.append(errorDiv);
     }
 
 
@@ -145,7 +160,6 @@ const dataDisplay = (() => {
          */
         cityForm.hide();
         _unhide()
-
         if (data.cod === 200) {
             _showData(data, dataConversion.getKelvinToCelcius);
         }

@@ -1,6 +1,6 @@
 ![Banner](./readme_banner.png)
 
-`weathercast` is a light-weight weather forecasting web application powered by the Openweather API. It allows users to query for weather data on virtually any particular city around globe.  
+`weathercast` is a light-weight weather forecasting web application powered by the [OpenWeather API](https://openweathermap.org/api). It allows users to query for weather data on virtually any particular city around globe.  
 
 ## Installation
 

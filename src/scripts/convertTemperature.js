@@ -1,19 +1,19 @@
 const convertTemperature = (() => {
     /**Methods that return converted values of numerical units. */
 
-    const getCelciusToFahrenheit = (celciusTemp) => {
+    const getCelsiusToFahrenheit = (celsiusTemp) => {
         /**
-         * Returns string of Celcius temperature converted to Fahrenheit.
+         * Returns string of Celsius temperature converted to Fahrenheit.
          * 
-         * @param {float} celciusTemp Temperature in celcius. 
+         * @param {float} celsiusTemp Temperature in celsius. 
         */
-        return `${((celciusTemp * 9/5) + 32).toFixed(2)}°F`;
+        return `${((celsiusTemp * 9/5) + 32).toFixed(2)}°F`;
     }
 
 
-    const getFahrenheitToCelcius = (fahrenheitTemp) => {
+    const getFahrenheitToCelsius = (fahrenheitTemp) => {
         /**
-         * Returns string of Fahrenheit temperature converted to Celcius.
+         * Returns string of Fahrenheit temperature converted to Celsius.
          * 
          * @param {float} fahrenheitTemp Temperature in Fahrenheit. 
         */
@@ -21,9 +21,9 @@ const convertTemperature = (() => {
     }
 
     
-    const getKelvinToCelcius = (kelvinTemp) => {
+    const getKelvinToCelsius = (kelvinTemp) => {
         /**
-         * Returns string of Kelvin temperature converted to Celcius.
+         * Returns string of Kelvin temperature converted to Celsius.
          * 
          * @param {float} kelvinTemp Temperature in Kelvin. 
         */
@@ -42,9 +42,9 @@ const convertTemperature = (() => {
 
 
     return {
-        getCelciusToFahrenheit,
-        getFahrenheitToCelcius,
-        getKelvinToCelcius,
+        getCelsiusToFahrenheit,
+        getFahrenheitToCelsius,
+        getKelvinToCelsius,
         getKelvinToFahrenheit,
     }
 })();

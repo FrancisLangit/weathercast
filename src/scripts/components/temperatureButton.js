@@ -5,8 +5,8 @@ const temperatureButton = (() => {
     /**
      * Button that changes scale of temperature values displayed. 
      */
-    let _tempCb = convertTemperature.getCelciusToFahrenheit;
-    let _isCelcius = true; 
+    let _tempCb = convertTemperature.getCelsiusToFahrenheit;
+    let _isCelsius = true; 
 
 
     const _toggleTempNode = (tempNode, tempCb) => {
@@ -24,17 +24,17 @@ const temperatureButton = (() => {
 
     const _toggleButton = () => {
         /**
-         * Toggles _tempCb, _isCelcius, and display value of button.
+         * Toggles _tempCb, _isCelsius, and display value of button.
          */
         let tempBtn = document.getElementById('temperatureButton');
-        if (_isCelcius) {
-            _tempCb = convertTemperature.getFahrenheitToCelcius;
+        if (_isCelsius) {
+            _tempCb = convertTemperature.getFahrenheitToCelsius;
             tempBtn.innerHTML = '°F';
-            _isCelcius = false;
+            _isCelsius = false;
         } else {
-            _tempCb = convertTemperature.getCelciusToFahrenheit;
+            _tempCb = convertTemperature.getCelsiusToFahrenheit;
             tempBtn.innerHTML = '°C';
-            _isCelcius = true;
+            _isCelsius = true;
         }
     }
 
@@ -67,10 +67,10 @@ const temperatureButton = (() => {
 
     const reset = () => {
         /**
-         * Resets _tempCb and _isCelsius variables back to Celcius. 
+         * Resets _tempCb and _isCelsius variables back to Celsius. 
          */
-        _tempCb = convertTemperature.getCelciusToFahrenheit;
-        _isCelcius = true; 
+        _tempCb = convertTemperature.getCelsiusToFahrenheit;
+        _isCelsius = true; 
     }
 
 

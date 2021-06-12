@@ -192,7 +192,7 @@ const dataDisplay = (() => {
         _unhide()
         if (data.cod === 200) {
             mainCard.resizeBigger();
-            _showData(data, convertTemperature.getKelvinToCelcius);
+            _showData(data, convertTemperature.getKelvinToCelsius);
         }
         else {
             _showError(data);

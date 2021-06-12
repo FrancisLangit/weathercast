@@ -23,6 +23,9 @@ const temperatureButton = (() => {
 
 
     const _toggleButton = () => {
+        /**
+         * Toggles _tempCb, _isCelcius, and display value of button.
+         */
         let tempBtn = document.getElementById('temperatureButton');
         if (_isCelcius) {
             _tempCb = convertTemperature.getFahrenheitToCelcius;

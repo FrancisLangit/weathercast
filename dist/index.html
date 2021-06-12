@@ -3,54 +3,36 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta 
-        http-equiv="X-UA-Compatible" 
-        content="IE=edge">
-    <meta 
-        name="viewport" 
-        content="widtd=device-widtd, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="widtd=device-widtd, initial-scale=1.0">
     
     <script src="main.js" async></script>
      
-    <title>
-        Weathercast
-    </title>
+    <title>Weathercast</title>
 </head>
 
 <body>
+    <!-- Main Card: Holds main user interface. -->
     <div id="containerCard">
-        <!-- Form where user makes a search query. -->
+        <!-- City Search Form: User enters city to get weather data on.-->
         <div id="cityForm">
-            <p id="cityFormHeader">
-                Weathercast
-            </p>
-
+            <p id="cityFormHeader">Weathercast</p>
             <form>
-                <!-- Where user inputs city they want weather data on. -->
-                <input 
-                    id="cityFormInput" 
-                    type="text" 
-                    placeholder="What city?">
-                <p id="cityFormHelp">
-                    Press enter to search.
-                </p>
+                <input id="cityFormInput" type="text" placeholder="What city?">
+                <p id="cityFormHelp">Press enter to search.</p>
             </form>
         </div>
 
-        <!-- Container where data from API is displayed. -->
+        <!-- Data Container: Display area for API data. -->
         <div id="data"></div>
 
-        <!-- Button that takes user back to city search form.-->
-        <div id="goBackButton">
-            ← Go Back
-        </div>
+        <!-- Go Back Button: Takes user back to city search form.-->
+        <div id="goBackButton">← Go Back</div>
     </div>
 
-    <!-- Card where supplmentary details about Weathercast are shown.-->
+    <!-- Footer Card: Supplementary details about project.-->
     <div id="footer">
-        Copyright © 2021 • 
-        <a href="https://github.com/FrancisLangit/weathercast/blob/main/LICENSE">License</a> • 
-        <a href ="https://github.com/FrancisLangit/weathercast/">GitHub</a>
+        Copyright © 2021 • <a href="https://github.com/FrancisLangit/weathercast/blob/main/LICENSE">License</a> • <a href ="https://github.com/FrancisLangit/weathercast/">GitHub</a>
     </div>
 </body>
 

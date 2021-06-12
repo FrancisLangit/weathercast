@@ -9,10 +9,11 @@
     font-family: $font-bold;
     height: 40px;
     justify-content: center;
+    transition: background-color 0.5s;
     user-select: none;
     width: 40px;
 
     &:hover {
-        background: rgb(215, 215, 215);
+        background: rgb(225, 225, 225);
     }
 }

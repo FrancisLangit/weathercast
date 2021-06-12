@@ -179,6 +179,8 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-transition: background-color 0.5s;
+  transition: background-color 0.5s;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -187,5 +189,5 @@
 }
 
 #temperatureButton:hover {
-  background: #d7d7d7;
+  background: #e1e1e1;
 }

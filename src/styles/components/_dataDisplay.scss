@@ -1,0 +1,70 @@
+#data {
+    display: none;
+
+    &Header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &City {
+            font-family: $font-bold;
+            font-size: 32px;
+        }
+    }
+
+    &Main {
+        align-items: center;
+        border-bottom: 1px solid $border-color;
+        border-top: 1px solid $border-color;
+        display: flex;
+        justify-content: center;
+        padding: 10px;
+        height: 95px;
+
+        &Icon {
+            background-color: rgb(205, 205, 205);
+            border-radius: 50%;
+            border: 1px solid rgb(185, 185, 185);
+            height: 45px;
+            margin-right: 15px;
+            width: 45px;
+        }
+
+        &Text {
+            font-family: $font-mono;
+            font-size: 18px;
+        }
+    }
+
+    &Details {
+        border-collapse: collapse;
+        font-family: $font-light;
+        font-size: 16px;
+        margin: 40px 0;
+        width: 100%;
+
+        th, td {
+            border-bottom: 1px solid $border-color;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            font-family: $font-bold;
+        }
+    }
+
+    &Error {
+        &Code {
+            font-family: $font-bold;
+            font-size: 56px;
+            margin: 0;
+        }
+
+        &Message {
+            font-family: $font-light;
+            font-size: 32px;
+            text-transform: capitalize;
+        }
+    }
+}

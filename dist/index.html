@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="widtd=device-widtd, initial-scale=1.0">
     
     <script src="main.js" async></script>
      
@@ -12,18 +12,26 @@
 </head>
 
 <body>
-    <h1>Weathercast</h1>
+    <!-- Main Card: Holds main user interface. -->
+    <div id="mainCard" class="card">
+        <!-- City Search Form: Where user enters city to get weather data on.-->
+        <div id="cityForm">
+            <p id="cityFormHeader">Weathercast</p>
+            <form>
+                <input id="cityFormInput" type="text" placeholder="What city?">
+                <p id="cityFormHelp">Press enter to search.</p>
+            </form>
+        </div>
 
-    <form id="searchCityForm">
-        <label for="searchCityInput">City:</label>
-        <input 
-            type="text" 
-            id="searchCityInput" 
-            placeholder="Name of City (e.g. Manila)">
-        <button>Submit</button>
-    </form>
+        <!-- Data Container: Display area for API data. -->
+        <div id="data"></div>
 
-    <div id="weatherDataDisplay"></div>
+        <!-- Go Back Button: Takes user back to city search form.-->
+        <div id="goBackButton">← Go Back</div>
+    </div>
+
+    <!-- Footer Card: Supplementary details about project.-->
+    <div id="footerCard" class="card"></div>
 </body>
 
 </html>

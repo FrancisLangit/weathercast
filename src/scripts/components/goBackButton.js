@@ -1,6 +1,7 @@
 import { 
     cityForm, 
-    containerCard 
+    containerCard,
+    temperatureButton,
 } from '../../index.js';
 
 
@@ -18,6 +19,7 @@ const goBackButton = (() => {
          */
         document.getElementById('data').innerHTML = '';
         document.getElementById('cityFormInput').value = '';
+        temperatureButton.reset();
         containerCard.resizeSmaller();
         cityForm.show();
         _goBackButtonNode.style.display = 'none';

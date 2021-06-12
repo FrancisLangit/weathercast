@@ -62,7 +62,16 @@ const temperatureButton = (() => {
     }
 
 
-    return { create }
+    const reset = () => {
+        /**
+         * Resets _tempCb and _isCelsius variables back to Celcius. 
+         */
+        _tempCb = convertTemperature.getCelciusToFahrenheit;
+        _isCelcius = true; 
+    }
+
+
+    return { create, reset }
 })();
 
 

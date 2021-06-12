@@ -2,6 +2,7 @@
     align-items: center;
     background: rgb(205, 205, 205);
     border-radius: 50%;
+    border: 1px solid rgb(185, 185, 185);
     color: rgb(95, 95, 95);
     cursor: pointer;
     display: inline-flex;
@@ -10,4 +11,8 @@
     justify-content: center;
     user-select: none;
     width: 40px;
+
+    &:hover {
+        background: rgb(215, 215, 215);
+    }
 }

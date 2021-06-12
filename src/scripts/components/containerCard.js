@@ -3,7 +3,7 @@ const containerCard = (() => {
      * Card containing all the contents of the user interface.
      */
     
-    const _containerCardNode = document.getElementsByClassName('card')[0];
+    const _containerCardNode = document.getElementById('containerCard');
 
 
     const resizeSmaller = () => {

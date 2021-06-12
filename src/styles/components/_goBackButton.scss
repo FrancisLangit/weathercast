@@ -3,6 +3,7 @@
     display: none;
     font-family: $font-bold;
     font-size: 24px;
+    user-select: none;
 
     &:hover {
         text-decoration: underline;

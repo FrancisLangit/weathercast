@@ -16,14 +16,14 @@ const temperatureButton = (() => {
          * 
          * @param {Node} tempNode Node to convert innerHTML of.
          * @param {tempCb} tempCb Callback function from convertTemperature
-         *      module wil convert value of tempNode.
+         *      module wil convert value of tempNosde.
          */
         tempNode.innerHTML = tempCb(parseFloat(tempNode.innerHTML));
     }
 
 
     const _toggleButton = () => {
-        let tempBtn = document.getElementById('dataHeaderTempButton');
+        let tempBtn = document.getElementById('temperatureButton');
         if (_isCelcius) {
             _tempCb = convertTemperature.getFahrenheitToCelcius;
             tempBtn.innerHTML = '°F';
@@ -55,7 +55,7 @@ const temperatureButton = (() => {
          * temperature units being displaed.
          */
         let tempBtn = document.createElement('div');
-        tempBtn.id = 'dataHeaderTempButton';
+        tempBtn.id = 'temperatureButton';
         tempBtn.innerHTML = '°C';
         tempBtn.addEventListener('click', _toggleTempDisplays)
         document.getElementById('dataHeader').appendChild(tempBtn);

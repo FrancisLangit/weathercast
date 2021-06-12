@@ -10,18 +10,6 @@
             font-family: $font-bold;
             font-size: 32px;
         }
-
-        &TempButton {
-            align-items: center;
-            background: rgb(205, 205, 205);
-            border-radius: 50%;
-            color: rgb(95, 95, 95);
-            display: inline-flex;
-            font-family: $font-bold;
-            height: 40px;
-            justify-content: center;
-            width: 40px;
-        }
     }
 
     &Main {

@@ -1,0 +1,13 @@
+#temperatureButton {
+    align-items: center;
+    background: rgb(205, 205, 205);
+    border-radius: 50%;
+    color: rgb(95, 95, 95);
+    cursor: pointer;
+    display: inline-flex;
+    font-family: $font-bold;
+    height: 40px;
+    justify-content: center;
+    user-select: none;
+    width: 40px;
+}

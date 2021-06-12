@@ -13,7 +13,7 @@
 
 ## Usage
 
-![GIF demonstrating usage of the web application](/home/francislangit/Desktop/weathercast/readme_usage_gif.gif)
+![GIF demonstrating usage of the web application](./readme_usage_gif.gif)
 
 Users enter a search query of a city they'd like a weather forecast of. If the city exists, `weathercast` displays a wide array of weather data about the location queried. One is also given the ability to change the temperature scale displayed from Celsius to Fahrenheit and vice versa using the button on the top-right hand corner of the UI.
 

@@ -21,6 +21,7 @@
 #cityFormHeader {
   font-family: "Open Sans Bold";
   font-size: 56px;
+  margin: 5px 0 40px 0;
 }
 
 #cityFormInput {
@@ -30,21 +31,11 @@
   font-size: 32px;
   outline: none;
   padding-bottom: 16px;
-  width: 450px;
 }
 
 #cityFormHelp {
   font-family: "Open Sans Light";
   font-size: 16px;
-}
-
-#containerCard {
-  border-radius: 25px;
-  border: 1px solid #cdcdcd;
-  height: 310px;
-  width: 450px;
-  margin: 45px auto 0 auto;
-  padding: 25px 50px 75px 50px;
 }
 
 #data {
@@ -119,7 +110,7 @@
 #dataErrorCode {
   font-family: "Open Sans Bold";
   font-size: 56px;
-  margin-bottom: 0;
+  margin: 0;
 }
 
 #dataErrorMessage {
@@ -128,21 +119,15 @@
   text-transform: capitalize;
 }
 
-#footer {
-  border-radius: 25px;
-  border: 1px solid #cdcdcd;
+#footerCard {
   height: auto;
-  margin: 25px auto 0 auto;
-  padding: 30px 50px;
-  width: 450px;
-  font-family: "Open Sans Regular";
 }
 
-#footer a {
+#footerCard a {
   color: black;
 }
 
-#footer a:hover {
+#footerCard a:hover {
   text-decoration: none;
 }
 
@@ -190,4 +175,20 @@
 
 #temperatureButton:hover {
   background: #e1e1e1;
+}
+
+body {
+  background-color: #eb6e4b;
+}
+
+.card {
+  background-color: white;
+  border-radius: 15px;
+  -webkit-box-shadow: 10px 10px black;
+          box-shadow: 10px 10px black;
+  font-family: "Open Sans Regular";
+  height: 250px;
+  margin: 40px auto 0 auto;
+  padding: 30px 50px;
+  width: 450px;
 }

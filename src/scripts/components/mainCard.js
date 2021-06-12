@@ -1,16 +1,16 @@
-const containerCard = (() => {
+const mainCard = (() => {
     /**
      * Card containing all the contents of the user interface.
      */
     
-    const _containerCardNode = document.getElementById('containerCard');
+    const _mainCardNode = document.getElementById('mainCard');
 
 
     const resizeSmaller = () => {
         /**
          * Resizes the height of the card to its default size.
          */
-        _containerCardNode.style.height = '310px';
+        _mainCardNode.style.height = '250px';
     }
 
 
@@ -18,7 +18,7 @@ const containerCard = (() => {
         /**
          * Resizes the height of the card to fit contents of data from API.
          */
-        _containerCardNode.style.height = 'auto';
+        _mainCardNode.style.height = '650px';
     }
 
     
@@ -26,4 +26,4 @@ const containerCard = (() => {
 })();
 
 
-export { containerCard }
+export { mainCard }

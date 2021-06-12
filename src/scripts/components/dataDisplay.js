@@ -1,6 +1,6 @@
 import { 
     cityForm, 
-    containerCard, 
+    mainCard, 
     convertTemperature,
     goBackButton,
     temperatureButton,
@@ -191,7 +191,7 @@ const dataDisplay = (() => {
         goBackButton.unhide();
         _unhide()
         if (data.cod === 200) {
-            containerCard.resizeBigger();
+            mainCard.resizeBigger();
             _showData(data, convertTemperature.getKelvinToCelcius);
         }
         else {

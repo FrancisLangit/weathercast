@@ -2,8 +2,22 @@
 @import '_variables';
 
 @import './components/cityForm';
-@import './components/containerCard';
 @import './components/dataDisplay';
 @import './components/footer';
 @import './components/goBackButton';
 @import './components/temperatureButton';
+
+body {
+    background-color: #eb6e4b;
+}
+
+.card {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 10px 10px black;
+    font-family: $font-regular;
+    height: 250px;
+    margin: 40px auto 0 auto;
+    padding: 30px 50px;
+    width: 450px;
+}

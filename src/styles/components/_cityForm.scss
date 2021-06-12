@@ -2,6 +2,7 @@
     &Header {
         font-family: $font-bold;
         font-size: 56px;
+        margin: 5px 0 40px 0;
     }
 
     &Input {
@@ -11,7 +12,6 @@
         font-size: 32px;
         outline: none;
         padding-bottom: 16px;
-        width: 450px;
     }
 
     &Help {
